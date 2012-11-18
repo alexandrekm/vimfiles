@@ -93,7 +93,7 @@ autocmd FileType plaintex setlocal fileencoding=utf8
 if has("gui_running")
   syntax on
   set hlsearch
-  set background=light
+  set background=dark
   colorscheme solarized
   if has("gui_macvim")
     set guifont=Menlo:h12
