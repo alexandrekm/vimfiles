@@ -2,7 +2,7 @@
 " Pathogen setup                   "
 """""""""""""""""""""""""""""""""""" 
 
-" Needed on some linux distros.
+" Turning filetype detection off is needed on some linux distros.
 filetype off 
 
 call pathogen#runtime_append_all_bundles()
@@ -10,6 +10,7 @@ call pathogen#helptags()
 
 
 """""""""""""""""""""""""""""""""""" 
+" Standard options                 "
 """""""""""""""""""""""""""""""""""" 
 
 " When started as "evim", evim.vim will already have done these settings.
@@ -24,11 +25,6 @@ set nocompatible
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-" if has("vms")
-"   set nobackup  " do not keep a backup file, use versions instead
-" else
-"   set backup		" keep a backup file
-" endif
 set history=50		" keep 50 lines of command line history
 set ruler		      " show the cursor position all the time
 set showcmd		    " display incomplete commands
@@ -37,14 +33,6 @@ set incsearch		  " do incremental searching
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
 
-" Don't use Ex mode, use Q for formatting
-map Q gq
-
-" This is an alternative that also works in block mode, but the deleted
-" text is lost and it only works for putting the current register.
-"vnoremap p "_dp
-
-" Only do this part when compiled with support for autocommands.
 if has("autocmd")
 	" Enable file type detection.
 	" Use the default filetype settings, so that mail gets 'tw' set to 72,
@@ -76,7 +64,6 @@ else
 endif " has("autocmd")
 
 
-
 """""""""""""""""""""
 " Personal settings "
 """""""""""""""""""""
@@ -85,7 +72,6 @@ endif " has("autocmd")
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
  
-
 " Latex file encoding
 autocmd FileType plaintex setlocal fileencoding=utf8
 
@@ -99,27 +85,27 @@ if has("gui_running")
     set guifont=Menlo:h12
   endif
 else
+  " Some terminals (mac) did not support highlighting well... =/
   syntax off
   set nohlsearch
 endif
 
-set nobackup               " Disable the creation of backup files (the ones ending with ~)
-set mouse=a                " enable mouse 'all'
-set number                 " line numbers
-set scrolloff=4            " Keep the cursor away from top/bottom
-set wildmode=longest,list  " TAB completion (such as bash)
-set laststatus=2           " Always show a status bar
-set smartcase              " Ignore case when search pattern is all lowercase
-
-set shiftwidth=2           " # of spaces of auto indent
-set softtabstop=2          " # of spaces of <TAB> key
-set tabstop=2              " # of spaces erased when deleting a <TAB>
-set expandtab              " Insert spaces instead of tabs
-set smarttab               " 'siftwidth' in front of a line
+set nobackup              " Disable the creation of backup files (the ones ending with ~)
+set mouse=a               " enable mouse 'all'
+set number                " line numbers
+set scrolloff=4           " Keep the cursor away from top/bottom
+set wildmode=longest,list " TAB completion (such as bash)
+set laststatus=2          " Always show a status bar
+set smartcase             " Ignore case when search pattern is all lowercase
+set shiftwidth=2          " # of spaces of auto indent
+set softtabstop=2         " # of spaces of <TAB> key
+set tabstop=2             " # of spaces erased when deleting a <TAB>
+set expandtab             " Insert spaces instead of tabs
+set smarttab              " 'siftwidth' in front of a line
 
 
 """"""""""""""""
-" Key mappings "
+" key mappings "
 """"""""""""""""
 " Warning: <F1> is mapped to display help
 
@@ -138,17 +124,20 @@ nnoremap <F8> :cn<CR>
 nnoremap <silent> <F9> :NERDTreeToggle<CR>
 
 " Tagbar
-let g:tagbar_sort = 0      " Display tags the same order they appear in the source file
-let g:tagbar_width = 30    " Set Tagbar window width to 30
-let g:tagbar_autofocus = 1 " Change the focus to the Tagbar window whenever it is opened
+let g:tagbar_sort      = 0  " Display tags the same order they appear in the source file
+let g:tagbar_width     = 30 " Set Tagbar window width to 30
+let g:tagbar_autofocus = 1  " Change the focus to the Tagbar window whenever it is opened
 nnoremap <silent> <F10> :TagbarToggle<CR>
 
-" Use ctrl-[hjkl] to select the active split!
+" Move between windows using ctrl-[hjkl]
 nnoremap <silent> <C-K> <C-W>k
 nnoremap <silent> <C-J> <C-W>j
 nnoremap <silent> <C-H> <C-W>h
 nnoremap <silent> <C-L> <C-W>l
 
+""""""""""""""""""""""""
+" Macbook alternatives "
+""""""""""""""""""""""""
 " These are command mapping used as an alternative for when the function keys
 " are not available (i.e. on the macbook)
 nnoremap <silent> <leader>q :nohlsearch<CR>
