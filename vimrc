@@ -76,19 +76,16 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 autocmd FileType plaintex setlocal fileencoding=utf8
 
 " Appearance
-if has("gui_running")
-  syntax on
-  set hlsearch
-  set background=dark
-  colorscheme solarized
-  if has("gui_macvim")
-    set guifont=Menlo:h12
-  endif
-else
-  " Some terminals (mac) did not support highlighting well... =/
-  syntax off
-  set nohlsearch
+syntax on
+set hlsearch
+if has("gui_macvim")
+  set guifont=Menlo:h12
 endif
+
+" Colorscheme
+set background=dark
+let g:solarized_termtrans=0 " Required by iTerm2
+colorscheme solarized
 
 set nobackup              " Disable the creation of backup files (the ones ending with ~)
 set mouse=a               " enable mouse 'all'
