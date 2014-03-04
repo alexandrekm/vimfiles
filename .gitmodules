@@ -22,3 +22,6 @@
 [submodule "bundle/tasklist"]
 	path = bundle/tasklist
 	url = https://github.com/vim-scripts/TaskList.vim.git
+[submodule "bundle/todo.txt"]
+	path = bundle/todo.txt
+	url = https://github.com/freitass/todo.txt-vim.git
