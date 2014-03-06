@@ -85,7 +85,7 @@ endif
 " Colorscheme
 set background=dark
 let g:solarized_termtrans=0 " Required by iTerm2
-colorscheme solarized
+colorscheme elflord
 
 set nobackup              " Disable the creation of backup files (the ones ending with ~)
 set mouse=a               " enable mouse 'all'
