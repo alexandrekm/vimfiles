@@ -85,7 +85,7 @@ endif
 " Colorscheme
 set background=dark
 let g:solarized_termtrans=0 " Required by iTerm2
-colorscheme solarized
+colorscheme elflord
 
 set nobackup              " Disable the creation of backup files (the ones ending with ~)
 set mouse=a               " enable mouse 'all'
@@ -99,6 +99,14 @@ set softtabstop=2         " # of spaces of <TAB> key
 set tabstop=2             " # of spaces erased when deleting a <TAB>
 set expandtab             " Insert spaces instead of tabs
 set smarttab              " 'siftwidth' in front of a line
+
+" CtrlP
+" Window configurations:
+" 	position:bottom
+" 	order (of results):top to bottom (ttb)
+let g:ctrlp_match_window = 'bottom,order:ttb'
+let g:ctrlp_working_path_mode = ''  " working path won't change when opening new files
+let g:ctrlp_switch_buffer = 'Et'    " jump to opened window (if any)
 
 
 """"""""""""""""
