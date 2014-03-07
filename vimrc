@@ -100,6 +100,14 @@ set tabstop=2             " # of spaces erased when deleting a <TAB>
 set expandtab             " Insert spaces instead of tabs
 set smarttab              " 'siftwidth' in front of a line
 
+" CtrlP
+" Window configurations:
+" 	position:bottom
+" 	order (of results):top to bottom (ttb)
+let g:ctrlp_match_window = 'bottom,order:ttb'
+let g:ctrlp_working_path_mode = ''  " working path won't change when opening new files
+let g:ctrlp_switch_buffer = 'Et'    " jump to opened window (if any)
+
 
 """"""""""""""""
 " key mappings "
