@@ -1,6 +1,8 @@
 require 'colorize'
 
 task :update do
+  `git pull`
+  `git submodule update --init`
   cmd = "git submodule foreach '" +
     "cd ~/.vim/$path;" +
     "git checkout master;" +
