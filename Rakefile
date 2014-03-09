@@ -38,6 +38,7 @@ task :remove, :plugin_name do |t, args|
   config_group_name = "submodule \"#{submodule_path}\""
   remove_group('.gitmodules', config_group_name)
   remove_group('.git/config', config_group_name)
+  `git add .`
   `git rm --cached #{submodule_path}`
   `git commit -m "Remove #{plugin_name}"`
   `rm -rf #{submodule_path}`
