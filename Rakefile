@@ -42,6 +42,7 @@ task :remove, :plugin_name do |t, args|
   `git rm --cached #{submodule_path}`
   `git commit -m "Remove #{plugin_name}"`
   `rm -rf #{submodule_path}`
+  `rm -rf .git/modules/bundle/#{plugin_name}`
   puts "Plugin '#{plugin_name}' removed.".green
 end
 
