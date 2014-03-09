@@ -1,4 +1,5 @@
 require 'colorize'
+require 'parseconfig'
 
 task :update do
   `git pull`
@@ -20,5 +21,25 @@ task :install, :plugin_repository, :plugin_name do |t, args|
   `git commit -m "Install #{plugin_name}"`
   `git status`
   puts "Plugin '#{plugin_name}' installed.".green
+end
+
+def remove_group(file_path, group_name)
+  config = ParseConfig.new(file_path)
+  config.params.delete(group_name)
+  config.groups.delete(group_name)
+  file = File.open(file_path, 'w')
+  config.write(file, false)
+  file.close
+end
+
+task :remove, :plugin_name do |t, args|
+  plugin_name = args[:plugin_name]
+  submodule_path = "bundle/#{plugin_name}"
+  config_group_name = "submodule \"#{submodule_path}\""
+  remove_group('.gitmodules', config_group_name)
+  remove_group('.git/config', config_group_name)
+  `git rm --cached #{submodule_path}`
+  `git commit -m "Remove #{plugin_name}"`
+  `rm -rf #{submodule_path}`
 end
 
