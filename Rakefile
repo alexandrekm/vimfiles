@@ -28,7 +28,7 @@ def remove_group(file_path, group_name)
   config.params.delete(group_name)
   config.groups.delete(group_name)
   file = File.open(file_path, 'w')
-  config.write(file, false)
+  config.write(file)
   file.close
 end
 
