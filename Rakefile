@@ -1,5 +1,6 @@
 require 'parseconfig'
 
+desc "Update vim configuration as well as the installed plugins"
 task :update do
   `git pull`
   `git submodule update --init`
@@ -13,6 +14,7 @@ task :update do
   puts "Plugins updated."
 end
 
+desc "Install new plugin"
 task :install, :plugin_repository, :plugin_name do |t, args|
   plugin_repository = args[:plugin_repository]
   plugin_name = args[:plugin_name]
@@ -31,6 +33,7 @@ def remove_group(file_path, group_name)
   file.close
 end
 
+desc "Remove the specified plugin"
 task :remove, :plugin_name do |t, args|
   plugin_name = args[:plugin_name]
   submodule_path = "bundle/#{plugin_name}"
