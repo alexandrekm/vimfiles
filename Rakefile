@@ -1,4 +1,3 @@
-require 'colorize'
 require 'parseconfig'
 
 task :update do
@@ -11,7 +10,7 @@ task :update do
   `#{cmd}`
   `git add .`
   `git commit -m "Update plugins."`
-  puts "Plugins updated.".green
+  puts "Plugins updated."
 end
 
 task :install, :plugin_repository, :plugin_name do |t, args|
@@ -20,7 +19,7 @@ task :install, :plugin_repository, :plugin_name do |t, args|
   `git submodule add #{plugin_repository} bundle/#{plugin_name}`
   `git commit -m "Install #{plugin_name}"`
   `git status`
-  puts "Plugin '#{plugin_name}' installed.".green
+  puts "Plugin '#{plugin_name}' installed."
 end
 
 def remove_group(file_path, group_name)
@@ -43,6 +42,6 @@ task :remove, :plugin_name do |t, args|
   `git commit -m "Remove #{plugin_name}"`
   `rm -rf #{submodule_path}`
   `rm -rf .git/modules/bundle/#{plugin_name}`
-  puts "Plugin '#{plugin_name}' removed.".green
+  puts "Plugin '#{plugin_name}' removed."
 end
 
