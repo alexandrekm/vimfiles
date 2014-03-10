@@ -1,17 +1,22 @@
 require 'parseconfig'
 
-desc "Update vim configuration as well as the installed plugins"
+desc "Synchronizes with remote repository"
 task :update do
   `git pull`
   `git submodule update --init`
+  puts "Local repository updated."
+end
+
+desc "Get newer versions of installed plugins"
+task :upgrade do
   cmd = "git submodule foreach '" +
     "cd ~/.vim/$path;" +
     "git checkout master;" +
     "git pull'"
   `#{cmd}`
   `git add .`
-  `git commit -m "Update plugins."`
-  puts "Plugins updated."
+  `git commit -m "Upgrade plugins."`
+  puts "Plugins are up-to-date."
 end
 
 desc "Install new plugin"
