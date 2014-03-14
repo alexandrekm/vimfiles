@@ -1,8 +1,4 @@
 
-[submodule "bundle/tabular"]
-url = "https://github.com/godlygeek/tabular.git"
-path = "bundle/tabular"
-
 [submodule "bundle/tagbar"]
 url = "https://github.com/majutsushi/tagbar.git"
 path = "bundle/tagbar"
