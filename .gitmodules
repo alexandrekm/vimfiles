@@ -3,10 +3,6 @@
 url = "https://github.com/godlygeek/tabular.git"
 path = "bundle/tabular"
 
-[submodule "bundle/snipmate"]
-url = "https://github.com/msanders/snipmate.vim.git"
-path = "bundle/snipmate"
-
 [submodule "bundle/tagbar"]
 url = "https://github.com/majutsushi/tagbar.git"
 path = "bundle/tagbar"
