@@ -1,8 +1,4 @@
 
-[submodule "bundle/todo.txt"]
-url = "https://github.com/freitass/todo.txt-vim.git"
-path = "bundle/todo.txt"
-
 [submodule "bundle/YouCompleteMe"]
 url = "https://github.com/Valloric/YouCompleteMe.git"
 path = "bundle/YouCompleteMe"
