@@ -15,7 +15,3 @@ path = "bundle/todo.txt"
 url = "https://github.com/Valloric/YouCompleteMe.git"
 path = "bundle/YouCompleteMe"
 
-[submodule "bundle/surround"]
-url = "https://github.com/tpope/vim-surround.git"
-path = "bundle/surround"
-
