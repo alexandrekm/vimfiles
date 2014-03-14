@@ -158,6 +158,22 @@ let g:unite_source_history_yank_enable = 1
 nnoremap <leader>y :<C-u>Unite history/yank<CR>
 
 
+" NERDCommenter
+" Map <C-/> to toggle comment both in normal and visual mode
+nmap  <plug>NERDCommenterToggle
+vmap  <plug>NERDCommenterToggle
+
+" Tabularize
+nmap <silent> <leader>a= :<C-u>Tabularize /=<CR>
+vmap <silent> <leader>a= :<C-u>Tabularize /=<CR>
+nmap <silent> <leader>a: :<C-u>Tabularize /:<CR>
+vmap <silent> <leader>a: :<C-u>Tabularize /:<CR>
+nmap <silent> <leader>a:: :<C-u>Tabularize /:\zs<CR>
+vmap <silent> <leader>a:: :<C-u>Tabularize /:\zs<CR>
+nmap <silent> <leader>a, :<C-u>Tabularize /,<CR>
+vmap <silent> <leader>a, :<C-u>Tabularize /,<CR>
+
+
 """"""""""""""""
 " key mappings "
 """"""""""""""""
@@ -175,7 +191,8 @@ nnoremap <F7> :cp<CR>
 nnoremap <F8> :cn<CR>
 
 " NERDTree
-nnoremap <silent> <F9> :NERDTreeToggle<CR>
+nnoremap <silent> <F8> :NERDTreeToggle<CR>
+nnoremap <silent> <F9> :TagbarToggle<CR>
 
 " Tagbar
 let g:tagbar_sort      = 0  " Display tags the same order they appear in the source file
