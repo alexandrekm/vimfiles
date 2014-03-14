@@ -149,6 +149,13 @@ let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_working_path_mode = ''  " working path won't change when opening new files
 let g:ctrlp_switch_buffer = 'Et'    " jump to opened window (if any)
 
+" Unite
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+nnoremap <leader>r :<C-u>Unite -start-insert file_rec/async:!<CR>
+
+let g:unite_source_history_yank_enable = 1
+nnoremap <leader>y :<C-u>Unite history/yank<CR>
+
 
 """"""""""""""""
 " key mappings "
