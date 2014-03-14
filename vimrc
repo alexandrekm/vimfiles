@@ -20,25 +20,26 @@ if system('uname -o') =~ '^GNU/'
 endif
 
 " My Bundles here:
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/wildfire.vim'
+NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/neomru.vim'
+NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimproc.vim', {'build': {'unix': g:make}}
 NeoBundle 'Shougo/vimshell.vim'
-NeoBundle 'Shougo/neocomplete'
-NeoBundle 'Shougo/neosnippet.vim'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'flazz/vim-colorschemes'
-NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'godlygeek/tabular'
-NeoBundle 'majutsushi/tagbar'
-NeoBundle 'freitass/todo.txt-vim'
-NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'Shougo/wildfire.vim'
 NeoBundle 'Valloric/YouCompleteMe', {'build': {'unix': './install.sh --clang-completer'}}
+NeoBundle 'ddollar/nerdcommenter'
+NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'freitass/todo.txt-vim'
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'majutsushi/tagbar'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-surround'
 
 
 " Required:
