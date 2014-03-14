@@ -1,4 +1,4 @@
 *.swp
 .netrwhist
 bundle/**
-~bundle/neobundle.vim
+!bundle/neobundle.vim
