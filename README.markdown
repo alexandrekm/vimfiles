@@ -5,15 +5,9 @@ and modification of vim files and plugins.
 
 ## First time configuration
 
-This instructions will configure the .vim directory for the first time on our
-machine. If you are not Leandro Freitas but you want to get this files because
-you liked it (or because of any other reason), this is your place too; in that
-case, just replace `git@github.com:freitass/vimfiles.git` in the first command
-for `git://github.com/freitass/vimfiles.git`.
-
 First of all you have to clone the remote repository to our local machine:
 
-    git clone git@github.com:freitass/vimfiles.git ~/.vim
+    git clone https://github.com/alexandrekm/vimfiles.git ~/.vim
 
 After that, create a symlink from the vim runtime configure file (`~/.vimrc`)
 to `~/.vim/vimrc` (Notice that the file provided is not hidden):

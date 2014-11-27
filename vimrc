@@ -21,24 +21,24 @@ endif
 
 " My Bundles here:
 NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'Shougo/neocomplete'
-NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'Shougo/neosnippet.vim'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimproc.vim', {'build': {'unix': g:make}}
-NeoBundle 'Shougo/vimshell.vim'
-NeoBundle 'Shougo/wildfire.vim'
-NeoBundle 'Valloric/YouCompleteMe', {'build': {'unix': './install.sh --clang-completer'}}
+" NeoBundle 'Shougo/neocomplete'
+" NeoBundle 'Shougo/neomru.vim'
+" NeoBundle 'Shougo/neosnippet-snippets'
+" NeoBundle 'Shougo/neosnippet.vim'
+" NeoBundle 'Shougo/unite.vim'
+" NeoBundle 'Shougo/vimproc.vim', {'build': {'unix': g:make}}
+" NeoBundle 'Shougo/vimshell.vim'
+" NeoBundle 'Shougo/wildfire.vim'
+" NeoBundle 'Valloric/YouCompleteMe', {'build': {'unix': './install.sh --clang-completer'}}
 NeoBundle 'ddollar/nerdcommenter'
 NeoBundle 'flazz/vim-colorschemes'
-NeoBundle 'freitass/todo.txt-vim'
+" NeoBundle 'freitass/todo.txt-vim'
 NeoBundle 'godlygeek/tabular'
-NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'majutsushi/tagbar'
+" NeoBundle 'kien/ctrlp.vim'
+" NeoBundle 'majutsushi/tagbar'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'terryma/vim-multiple-cursors'
-NeoBundle 'tpope/vim-fugitive'
+" NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
 
 
@@ -108,14 +108,12 @@ endif " has("autocmd")
 " Personal settings "
 """""""""""""""""""""
 
-let mapleader = ","
+set undofile                " Save undo's after file closes
+set undodir=~/.vim/undo " where to save undo histories
+set undolevels=1000         " How many undos
+set undoreload=10000        " number of lines to save for undo
 
-" Quickly edit/reload the vimrc file
-nmap <silent> <leader>ev :e $MYVIMRC<CR>
-nmap <silent> <leader>sv :so $MYVIMRC<CR>
- 
-" Latex file encoding
-autocmd FileType plaintex setlocal fileencoding=utf8
+let mapleader = ","
 
 " Appearance
 syntax on
@@ -125,9 +123,9 @@ if has("gui_macvim")
 endif
 
 " Colorscheme
-set background=dark
-let g:solarized_termtrans=0 " Required by iTerm2
-colorscheme elflord
+" set background=dark
+" let g:solarized_termtrans=0 " Required by iTerm2
+colorscheme jellybeans
 
 set nobackup              " Disable the creation of backup files (the ones ending with ~)
 set mouse=a               " enable mouse 'all'
@@ -150,18 +148,11 @@ let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_working_path_mode = ''  " working path won't change when opening new files
 let g:ctrlp_switch_buffer = 'Et'    " jump to opened window (if any)
 
-" Unite
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-nnoremap <leader>r :<C-u>Unite -start-insert file_rec/async:!<CR>
-
-let g:unite_source_history_yank_enable = 1
-nnoremap <leader>y :<C-u>Unite history/yank<CR>
-
 
 " NERDCommenter
 " Map <C-/> to toggle comment both in normal and visual mode
-nmap  <plug>NERDCommenterToggle
-vmap  <plug>NERDCommenterToggle
+" nmap  <plug>NERDCommenterToggle
+" vmap  <plug>NERDCommenterToggle
 
 " Tabularize
 nmap <silent> <leader>a= :<C-u>Tabularize /=<CR>
